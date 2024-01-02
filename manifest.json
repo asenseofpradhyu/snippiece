@@ -10,7 +10,7 @@
   "icons": {},
   "content_scripts": [
     {
-      "matches": ["https://blank.org/*"],
+      "matches": ["<all_urls>"],
       "js": ["content-script/src/main.tsx"],
       "media": []
     }

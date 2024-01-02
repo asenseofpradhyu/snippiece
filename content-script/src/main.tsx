@@ -7,7 +7,7 @@ const body = document.querySelector("body");
 
 const app = document.createElement("div");
 
-app.id = "root";
+app.id = "content-script-extension";
 
 // Make sure the element that you want to mount the app to has loaded. You can
 // also use `append` or insert the app using another method:
@@ -19,7 +19,7 @@ if (body) {
   body.prepend(app);
 }
 
-const container = document.getElementById("root");
+const container = document.getElementById("content-script-extension");
 const root = createRoot(container!);
 
 root.render(
