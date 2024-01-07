@@ -1,40 +1,130 @@
-.App {
-  width: 23rem;
+/* Start of Snippiece Popup Style Sheet */
+/* Start of Design Theme */
+.bg-222831{
+  background-color: #222831;
+}
+.bg-393E46{
+  background-color: #393E46;
+}
+.bg-00ADB5{
+  background-color: #00ADB5;
+}
+.bg-EEEEEE{
+  background-color: #EEEEEE;
+}
+
+.text-222831{
+  color: #222831;
+}
+.text-393E46{
+  color: #393E46;
+}
+.text-00ADB5{
+  color: #00ADB5;
+}
+.text-EEEEEE{
+  color: #EEEEEE;
+}
+p{
+  margin: 0;
+}
+.p-16{
+  font-size: 16px;
+}
+.bold{
+  font-weight: bold !important;
+}
+.d-flex{
+  display: flex !important;
+} 
+
+.align-items-center{
+  align-items: center !important;
+} 
+
+.justify-content-between{
+  justify-content: space-between !important;
+}
+.snippiece-btn-no-style, .szh-accordion__item-btn{
+  background-color: transparent;
+    border: none;
   text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+/* End of Design Theme */
+
+
+.snippiece_popup_contianer_main{
+  width: 350px;
+  max-height: 600px;
+  min-height: 350px;
+  height: auto;
+  position: relative;
 }
 
-.App-logo {
-  width: unset;
-  height: 40vmin;
-  pointer-events: none;
+/* Start of Header Style */
+.snippiece_popup_header_main{
+  padding: 0px 15px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.snippiece_popup_header_content{
+  border-bottom: 1px solid #00ADB5;
+    padding: 10px 0px;
 }
+/* End of Header Style */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Start of Main Style */
+.snippiece_popup_accordion_item{
+  padding: 5px 15px;
+    border-bottom: 1px solid #00adb5;
+}
+.snippiece_popup_accordion_item .szh-accordion__item-btn{
+    width: 100%;
+    padding: 0;
+}
+.snippiece_popup_accordion_main .szh-accordion__item-btn .icons{
   display: flex;
-  flex-direction: column;
+    align-items: center;
+}
+
+.snippiece_popup_accordion_main .snippiece_popup_accordion_item .szh-accordion__item-content{
+   color: #EEEEEE;
+}
+.snippiece_popup_accordion_item .szh-accordion__item-content .szh-accordion__item-panel{
+  font-size: 14px;
+    padding: 10px 0;
+    line-height: 1.4;
+    /* line-break: anywhere; */
+}
+.snippiece_popup_empty_main{
+  height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.snippiece_popup_empty_main .snippiece_popup_empty{
+  font-size: 16px;
+}
+/* End of Main Style */
+
+
+/* Start of Footer Style */
+.snippiece_popup_footer_main{
+  padding: 0px 15px;
+  position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.snippiece_popup_footer_main .snippiece_popup_footer{
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  border-top: 1px solid #00ADB5;
+  padding: 5px 0px;
 }
+/* Start of Footer Style */
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* End of Snippiece Popup Style Sheet */
