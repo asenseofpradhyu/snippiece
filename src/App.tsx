@@ -74,7 +74,12 @@ function App() {
     window.open(selectedTextUrl, "_blank");
   }
 
-
+  const onClickLogin = async () => {
+    console.log("Handling Login Click");
+    // window.open('http://localhost:3000/auth/login', '_blank');
+    // toggle(acc_ItemKey);
+    chrome.runtime.sendMessage({ type: 'login' });
+  }
 
   return (
     <div className="bg-393E46 snippiece_popup_contianer_main">
@@ -147,7 +152,7 @@ function App() {
             <p className="text-EEEEEE p-16">Plan:- <span className="text-00ADB5 bold">Free</span></p>
           </div>
           <div className="snippiece_popup_user_auth">
-            <button className="snippiece-btn-no-style text-EEEEEE">Sign In</button>
+            <button className="snippiece-btn-no-style text-EEEEEE" onClick={onClickLogin}>Sign In</button>
           </div>
         </div>
       </div>

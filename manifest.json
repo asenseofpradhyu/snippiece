@@ -10,13 +10,25 @@
   "icons": {},
   "permissions": [
     "storage",
-    "unlimitedStorage"
+    "unlimitedStorage",
+    "cookies"
+  ],
+  "host_permissions":[
+    "http://localhost:3000/*",
+    "http://localhost:3100/*"
   ],
   "content_scripts": [
     {
-      "matches": ["https://example.com/*"],
+      "matches": ["https://example.com/*", "http://localhost:3000/*"],
       "js": ["content-script/src/main.tsx"],
       "media": []
     }
-  ]
+  ],
+  "background": {
+    "service_worker": "src/background.ts",
+    "type": "module"
+  },
+  "externally_connectable": {
+    "matches": ["http://localhost:3000/*"]
+  }
 }

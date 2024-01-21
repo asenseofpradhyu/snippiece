@@ -84,12 +84,12 @@ function App() {
     };
   }, []); // Empty dependency array ensures the effect runs once after the initial render
 
-  // return null; // No need to render anything in the content script
+  return null; // No need to render anything in the content script
 
 
   
-  return (
-    <></>
+  // return (
+    // <></>
     // <div className="App">
     //   <header className="App-header">
     //     <Logo className="App-logo" id="App-logo" title="React logo" />
@@ -97,7 +97,7 @@ function App() {
     //     <p>I'm a Chrome Extension Content Script!</p>
     //   </header>
     // </div>
-  );
+  // );
   }
 
 export default App;
