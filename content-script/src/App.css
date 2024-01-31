@@ -1,6 +1,20 @@
 /* styles.css */
+.snippiece_tooltip_container_main{
+   width: unset;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border-radius: unset;
+    box-shadow: none;
+    z-index: 999;
+    position: absolute;
+    bottom: unset;
+    right: unset;
+    top: 0;
+    left: 0;
+}
 .snippiece_tooltip_container {
-    width: auto;
+    width: max-content;
     max-width: 400px;
     margin: 0;
     padding: 0;
@@ -10,6 +24,9 @@
     font-size: 16px;
     font-weight: 600;
     border-radius: 0.5em;
+    position: absolute;
+    inset: auto auto 0px 0px;
+    z-index: 999;
 }
 
 .snippiece_bubble_tooltip {

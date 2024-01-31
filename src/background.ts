@@ -25,7 +25,21 @@
 
 chrome.runtime.onMessageExternal.addListener(
   function(request, sender, sendResponse) {
-    if (request.token)
+    if (request.token && request.UserID)
     //   openUrl(request.openUrlInEditor);
-    console.log("Message from Admin --> ", request.token);
+    console.log("Message from Admin Token--> ", request.token);
+    console.log("Message from Admin UserID--> ", request.userID);
+    chrome.storage.local.set({ userAuthExtension: {token:request.token, userID:request.userID} }, function () {
+                console.log('User Auth saved successfully');  
+                chrome.runtime.sendMessage({ type: 'load-data-from-server' });             
+    });
+  });
+
+  chrome.runtime.onMessageExternal.addListener(
+  function(request, sender, sendResponse) {
+    if (request.type === 'logout'){
+     chrome.storage.local.clear(function () {
+    console.log('Local storage cleared');
+  });
+  }
   });

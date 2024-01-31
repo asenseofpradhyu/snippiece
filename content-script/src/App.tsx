@@ -10,22 +10,27 @@ import Tooltip from './components/Tooltip';
 function App() {
 
   const tooltipContainerRef = useRef<HTMLDivElement | null>(null);
+  let selection = window.getSelection();
   // chrome.storage.local.clear(function () {
   //   console.log('Local storage cleared');
   // });
 
   const handleSelection = (event: MouseEvent) => {
     // console.log("Div Called");
-    const selection = window.getSelection();
+    // const selection = window.getSelection();
 
-    if (selection && selection.toString()) {
+    if (selection && selection.toString().length > 0) {
 
       const range = selection.getRangeAt(0);
       const rect = range.getBoundingClientRect();
+      const clientRects = range.getClientRects();
       
 
       const tooltipContainer = document.createElement('div');
-      document.body.appendChild(tooltipContainer);
+      const tooltipContainerMain = document.createElement('div');
+      tooltipContainerMain.className ="snippiece_tooltip_container_main";
+      tooltipContainerMain.appendChild(tooltipContainer);
+      document.body.appendChild(tooltipContainerMain);
 
       const url = window.location.href;
       const selectedText = selection.toString();
@@ -41,23 +46,24 @@ function App() {
 
       // Position the tooltip based on the selection
       tooltipContainer.className = 'snippiece_tooltip_container';
-      tooltipContainer.style.position = 'absolute';
+      tooltipContainer.style.transform = `translate(${clientRects[0].x}px, ${clientRects[0].y}px)`;
+      // tooltipContainer.style.position = 'absolute';
 
       // Adjust the tooltip position to be centered
       // tooltipContainer.style.left = `${centerX - tooltipWidth}px`;
       // tooltipContainer.style.top = `${centerY - tooltipHeight}px`;
 
-      tooltipContainer.style.top = (rect.top + window.scrollY - tooltipContainer.offsetHeight) - 20 + 'px';
-      tooltipContainer.style.left = rect.left + window.scrollX + rect.width / 2 - tooltipContainer.offsetWidth / 2 + 'px';
+      // tooltipContainer.style.top = (rect.top + window.scrollY - tooltipContainer.offsetHeight) - 20 + 'px';
+      // tooltipContainer.style.left = rect.left + window.scrollX + rect.width / 2 - tooltipContainer.offsetWidth / 2 + 'px';
 
-      console.log("Top:- ", (rect.top + window.scrollY - tooltipContainer.offsetHeight) - 20 + 'px');
-      console.log("Left:- ", (rect.left + window.scrollX + rect.width / 2 - tooltipContainer.offsetWidth / 2) - 20 + 'px');
+      // console.log("Top:- ", (rect.top + window.scrollY - tooltipContainer.offsetHeight) - 20 + 'px');
+      // console.log("Left:- ", (rect.left + window.scrollX + rect.width / 2 - tooltipContainer.offsetWidth / 2) - 20 + 'px');
 
       ReactDOM.render(
         <Tooltip selectedText={selectedText} url={url} />,
         tooltipContainer
       );
-      tooltipContainerRef.current = tooltipContainer;
+      tooltipContainerRef.current = tooltipContainerMain;
    
 
       // Remove the tooltip after some time or when the user clicks outside
@@ -71,11 +77,14 @@ function App() {
       // If outside, remove the tooltip container
       ReactDOM.unmountComponentAtNode(tooltipContainerRef.current);
       tooltipContainerRef.current.remove();
-      console.log("Click Outside 2");
+      console.log("Click Outside");
     }
   };
 
   useEffect(() => {
+  
+   
+
     document.addEventListener('mouseup', handleSelection);
 
     // Cleanup event listener when component unmounts
