@@ -1,29 +1,32 @@
 /* Start of Snippiece Popup Style Sheet */
 /* Start of Design Theme */
-.bg-222831{
-  background-color: #222831;
+.bg-ffffff{
+  background-color: #FFFFFF;
 }
-.bg-393E46{
-  background-color: #393E46;
+.bg-f0f0f0{
+  background-color: #f0f0f0;
 }
-.bg-00ADB5{
-  background-color: #00ADB5;
+.bg-222222{
+  background-color: #222222;
 }
-.bg-EEEEEE{
-  background-color: #EEEEEE;
+.text-error{
+  color: #e93a60;
 }
-
-.text-222831{
-  color: #222831;
+.text-131313{
+  color: #131313;
 }
-.text-393E46{
-  color: #393E46;
+.text-white{
+  color: #FFFFFF;
 }
-.text-00ADB5{
-  color: #00ADB5;
+.btn-dark{
+  background-color: #222222;
+  border-radius: 8px;
+  color: #FFFFFF;
 }
-.text-EEEEEE{
-  color: #EEEEEE;
+hr{
+  background-color: #f0f0f0;
+  height: 1px;
+  border: 0;
 }
 p{
   margin: 0;
@@ -37,7 +40,9 @@ p{
 .d-flex{
   display: flex !important;
 } 
-
+.cursor-pointer{
+  cursor: pointer;
+}
 .align-items-center{
   align-items: center !important;
 } 
@@ -60,7 +65,7 @@ p{
 .snippiece_popup_contianer_main{
   width: 350px;
   max-height: 600px;
-  min-height: 350px;
+  min-height: 450px;
   height: auto;
   position: relative;
 }
@@ -70,15 +75,14 @@ p{
   padding: 0px 15px;
 }
 .snippiece_popup_header_content{
-  border-bottom: 1px solid #00ADB5;
-    padding: 10px 0px;
+    padding: 10px 0px 5px 0px;
 }
 /* End of Header Style */
 
 /* Start of Main Style */
 .snippiece_popup_accordion_item{
   padding: 5px 15px;
-    border-bottom: 1px solid #00adb5;
+    border-bottom: 1px solid #f0f0f0;
 }
 .snippiece_popup_accordion_item .szh-accordion__item-btn{
     width: 100%;
@@ -122,7 +126,6 @@ p{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid #00ADB5;
   padding: 5px 0px;
 }
 /* Start of Footer Style */
